@@ -1,4 +1,4 @@
-# Resumake Template 8
+# Latex Resume
 > Initial LaTeX code generated at [resumake.io](https://resumake.io) then modified.
 
 ## Usage
