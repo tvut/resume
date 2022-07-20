@@ -1,97 +1,79 @@
-%% The MIT License (MIT)
-%%
-%% Copyright (c) 2015 Daniil Belyakov
-%%
-%% Permission is hereby granted, free of charge, to any person obtaining a copy
-%% of this software and associated documentation files (the "Software"), to deal
-%% in the Software without restriction, including without limitation the rights
-%% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%% copies of the Software, and to permit persons to whom the Software is
-%% furnished to do so, subject to the following conditions:
-%%
-%% The above copyright notice and this permission notice shall be included in all
-%% copies or substantial portions of the Software.
-%%
-%% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-%% SOFTWARE.
-    % The font could be set to Windows-specific Calibri by using the 'calibri' option
-    \documentclass[]{mcdowellcv}
+\documentclass[]{mcdowellcv}
 
-    % For mathematical symbols
-    \usepackage{amsmath}
-    \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+% For mathematical symbols
+\usepackage{amsmath}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
 
-    
-      % Set applicant's personal data for header
-      \name{Tristan Stevens}
-      \address{Montreal, QC \linebreak +1 438-408-3363 \linebreak contact@tristans.ca}
-      \contacts{https://tristans.ca \linebreak \href{https://github.com/tvut}{Github @tvut} \linebreak \href{https://www.linkedin.com/in/tristanstev/}{LinkedIn @tristanstev}}
-    
+	% Set applicant's personal data for header
+	\name{Tristan Stevens}
+	\address{\ifx\CITY S{Seattle, WA}\else{Montreal, QC}\fi \linebreak +1 438-408-3363 \linebreak \underline{contact@tristans.ca}}
+	\contacts{\underline{https://tristans.ca} \linebreak \href{https://github.com/tvut}{\underline{Github @tvut}} \linebreak \href{https://www.linkedin.com/in/tristanstev/}{\underline{LinkedIn @tristanstev}}}
+	
 
-    \begin{document}
+\begin{document}
+
+% S for seattle, M for montreal
+\let\CITY=M
+
+% T for web oreintated resume, F for C
+\let\WEB=C
+
 % Print the header
 \makeheader
 
 \begin{cvsection}{Education}
-	\begin{cvsubsection}{Montreal, QC}{McGill University}{Aug 2020 | Current}
-	\vspace{-1.5mm}
-		\begin{itemize}
-			\item BS in Honours Computer Science. GPA: 3.83
-			\item Classes in Java, C, Assembly, Operating Systems, Numerical Computing, Data Structures, C++, Competitive Programming, Algorithms, Functional Programming
-		\end{itemize}
-	\vspace{-1.5mm}
+	\begin{cvsubsection}{\normalfont Honours B.Sc Computer Science}{McGill University}{Aug 2020 -- Current}
 	\end{cvsubsection}
+	\vspace{-13mm}
 \end{cvsection}
 \begin{cvsection}{Experience}
-	\begin{cvsubsection}{Software Engineering Intern}{RareCyte}{May 2022 -- August 2022}
-	\vspace{-1.5mm}
-		Seattle, Washington
+	\begin{cvsubsection}{Software Development Intern}{RareCyte}{May 2022 -- August 2022}
+		Seattle, WA, United States
 		\begin{itemize}%
-			\item Wireframed and implemented a Python API to provide higher level functionality to a lower level C++ API implemented in Qt
-			\item Developed a Vue.js frontend with a Django backend that allowed control of the hardware instrument from a progressive web app
-			\item Tested the API and frontend app on the hardware instrument
+			\item Rewrote a safety critical \textbf{C++ instrument controller} to support live instrument feedback through MQTT IOT protocols and developed language agnostic schemas for common commands
+			\item Developed a \textbf{Vue.js} frontend with a \textbf{Django} backend that allowed control of the hardware through the MQTT IOT protocol and integrated with existing workflow tools
+			\item Defined constraints for software inputs in collaboration with the software and biology team then developed a new controlled configuration environment for hardware settings
+			\item Observed up to a 50\% scan speedup when hardware testing the controller with biological samples
 		\end{itemize}
 	\end{cvsubsection}
-	% \begin{cvsubsection}{Front End Developer}{UAEM McGill}{Dec 2021 -- May 2022}
-	% \vspace{-1.5mm}
-	% 	Montreal, QC
-	% 	\begin{itemize}%
-	% 		\item Led a small team to develop a front end PPE Tracker developed in \textbf{React.js} with Tailwind CSS
-	% 		\item Revised backend Express endpoints and refactored Docker containers for the MongoDB database
-	% 	\end{itemize}
-	% \end{cvsubsection}
+	\begin{cvsubsection}{Front End Developer}{UAEM McGill}{Dec 2021 -- July 2022}
+		\vspace{-2.5mm}
+		Montreal, QC, Canada
+		\begin{itemize}%
+			\item Designed and developed forms and routing logic for the front end of a specialized non-profit marketplace in \textbf{React.js with Tailwind}
+			\item Reimplemented then containerized Express REST endpoints and MongoDB database with Docker
+		\end{itemize}
+	\end{cvsubsection}
 	\begin{cvsubsection}{Tutor}{Computer Science Undergraduate Society}{Jan 2022 -- May 2022}
-	\vspace{-1.5mm}
-		Montreal, QC
-		\begin{itemize}%
-			\item Help students with computer science concepts such as algorithms and data structures
-			\item Guide tutees on how to debug their programming assignments thoroughly in \textbf{C, Java and Python}
-			\item Demonstrate how to learn programming syntax by using software documentation
-		\end{itemize}
-	\end{cvsubsection}
-	\begin{cvsubsection}{Lead Programmer}{Vex Robotics Team}{Sep 2016 -- Apr 2020}
-	\vspace{-1.5mm}
-		Bellevue, WA
-		\begin{itemize}%
-			\item Designed a robot to compete in the Vex Robotics competition with a team of six people
-			\item Programmed the robot in \textbf{C++} to perform user controlled actions as well as autonomous functions
-			\item Utilized \textbf{hardware sensors and threading} to optimize long-term performance of hardware
-			\item Won 5 x Design Award, 1 x World Qualifying Design Award, 2 x Tournament Champions, Washington State Champions, Division Semifinals at the Vex Worlds Competition
-		\end{itemize}
-	\end{cvsubsection}
-\end{cvsection}
-\begin{cvsection}{Skills}
-	\begin{cvsubsection}{}{}{}
-		\begin{itemize}
-			\item Programming Languages:  C, C++, Java, Python, HTML, CSS, JS, PHP, React.js, Bash, Ocaml
-			\item Software:  Git, GitHub, IntelliJ Suite, AWS, Azure, Wordpress, Linux, Docker, Visual Studio, Cmake, VSCode, Jira, Confluence
-		\end{itemize}
-	\end{cvsubsection}
+		\vspace{-2.5mm}
+			Montreal, QC, Canada
+			\begin{itemize}%
+				\item Helped students learn concepts such as algorithms and data structures
+				\item Guided tutees on how to successfully debug their programming assignments in \textbf{C, Java and Python}
+				\item Frequently requested for repeated sessions with my tutees and helped them out of scheduled hours
+			\end{itemize}
+		\end{cvsubsection}
+	\ifx\WEB T{
+		\begin{cvsubsection}{USG of Technology}{MUNNW}{Dec 2017 -- Nov 2019}
+			\vspace{-2.5mm}
+				Seattle, WA, United States
+				\begin{itemize}%
+					\item Designed and developed conference websites in \textbf{PHP, CSS and JS} to register 1000+ delegates
+					\item Performance tested and optimized load times to make the usable load time up to 3x faster
+					\item Managed conference IT including an enterprise network setup and GSuite for all users
+				\end{itemize}
+			\end{cvsubsection}
+	} \else {
+		\begin{cvsubsection}{Robotics Programmer}{Vex Robotics Team}{Sep 2016 -- Apr 2020}
+		\vspace{-2.5mm}
+			Bellevue, WA, United States
+			\begin{itemize}%
+				\item Programmed a robot in \textbf{C++} to have several autonomous routines and a semi-assisted user controlled state that would allow the robot to complete game objectives
+				\item Used \textbf{hardware sensors and threading} to improve hardware runtime by 800\%
+				\item Won 6 x Design Award, 2 x Tournament Champions, WA State Champions
+			\end{itemize}
+		\end{cvsubsection}
+	} \fi
 \end{cvsection}
 \begin{cvsection}{Projects}
 	\begin{cvsubsection}{}{}{}
@@ -99,8 +81,20 @@
 			\setlength\itemsep{3pt}
 			\item \textbf{Mixerify} Developed a full stack app to browse a user's Spotify library and pick playlists to send to our ML model. \textit{React.js, Express, Tailwind, Spotify OAuth, REST Api}
 			\item \textbf{Covid Sentiment Analysis}  Scraped geolocated YouTube comments then trained and deployed Tensorflow models to predict comment sentiment on Nvidia Tesla clusters. \textit{Python, Azure}
-			\item \textbf{File System}  Developed a simple file system in C and implemented it into Linux via the Fuse Wrapper. \textit{C, Fuse Wrapper}
-			% \item \textbf{WP Masonry Gallery Plugin}  Improved a WordPress plugin’s source code to serve responsive images depending on browser viewport using HTML5 image technologies. \textit{PHP, CSS, Wordpress}
+			\ifx\WEB T{
+				\item \textbf{React Wordle} Implementation of Wordle that pulls words from a dictionary then allows the user six tries to guess the word. \textit{React.js, Tailwind}
+			}\else{
+				\item \textbf{File System}  Developed a simple file system in C and implemented it into Linux via the Fuse Wrapper. \textit{C, Fuse Wrapper}
+			}\fi
+		\end{itemize}
+	\end{cvsubsection}
+\end{cvsection}
+\begin{cvsection}{Skills}
+	\begin{cvsubsection}{}{}{}
+		\begin{itemize}
+			\item Programming Languages:  C, C++, Java, Python, JavaScript, HTML, CSS, PHP, Bash, Ocaml
+			\ifx\WEB T{\item Frameworks: React.js, Vue.js, Django, Express, Wordpress, Tailwind, Bootstrap}\fi
+			\item Software:  Git, GitHub, IntelliJ Suite, AWS, Azure, Linux, Docker, Visual Studio, Cmake, Jira
 		\end{itemize}
 	\end{cvsubsection}
 \end{cvsection}
