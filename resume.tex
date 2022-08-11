@@ -6,17 +6,17 @@
 
 	% Set applicant's personal data for header
 	\name{Tristan Stevens}
-	\address{\ifx\CITY S{Seattle, WA}\else{Montreal, QC}\fi \linebreak +1 438-408-3363 \linebreak \underline{contact@tristans.ca}}
-	\contacts{\underline{https://tristans.ca} \linebreak \href{https://github.com/tvut}{\underline{Github @tvut}} \linebreak \href{https://www.linkedin.com/in/tristanstev/}{\underline{LinkedIn @tristanstev}}}
+	\address{\ifx\CITY S{Seattle, WA}\else{Montreal, QC}\fi \linebreak +1 438-408-3363 \linebreak \underline{\ifx\CITY S{contact@tristanst.com}\else{contact@tristans.ca}\fi}}
+	\contacts{\underline{\ifx\CITY S{https://tristanst.com}\else{https://tristans.ca}\fi} \linebreak \href{https://github.com/tvut}{\underline{Github @tvut}} \linebreak \href{https://www.linkedin.com/in/tristanstev/}{\underline{LinkedIn @tristanstev}}}
 	
 
 \begin{document}
 
 % S for seattle, M for montreal
-\let\CITY=M
+\let\CITY=S
 
 % T for web oreintated resume, F for C
-\let\WEB=C
+\let\WEB=T
 
 % Print the header
 \makeheader
