@@ -13,7 +13,7 @@
 \begin{document}
 
 % S for seattle, M for montreal
-\let\CITY=S
+\let\CITY=M
 
 % T for web oreintated resume, F for C
 \let\WEB=F
@@ -22,11 +22,21 @@
 \makeheader
 
 \begin{cvsection}{Education}
-	\begin{cvsubsection}{\normalfont Honours B.Sc Computer Science}{McGill University}{Aug 2020 -- Current}
+	\begin{cvsubsection}{\normalfont Honours B.Sc Computer Science}{McGill University}{Aug 2020 -- May 2024}
+	\end{cvsubsection}
+	\vspace{-12mm}
+	\begin{cvsubsection}{\normalfont Study Abroad}{University of Edinburgh}{Jan 2023 -- May 2023}
 	\end{cvsubsection}
 	\vspace{-13mm}
 \end{cvsection}
 \begin{cvsection}{Experience}
+	\begin{cvsubsection}{Software Engineering Intern}{Capital One}{June 2023 -- August 2023}
+		\vspace{-2.5mm}
+		Chicago, IL, United States
+		\begin{itemize}%
+			\item Accepted an offer for a 10-week technology internship program as a Software Engineering Intern
+		\end{itemize}
+	\end{cvsubsection}
 	\begin{cvsubsection}{Software Development Intern}{RareCyte}{May 2022 -- August 2022}
 		Seattle, WA, United States
 		\begin{itemize}%
@@ -44,15 +54,15 @@
 			\item Reimplemented then containerized Express REST endpoints and MongoDB database with Docker
 		\end{itemize}
 	\end{cvsubsection}
-	\begin{cvsubsection}{Tutor}{Computer Science Undergraduate Society}{Jan 2022 -- Present}
-		\vspace{-2.5mm}
-			Montreal, QC, Canada
-			\begin{itemize}%
-				\item Helped students learn concepts such as algorithms and data structures
-				\item Guided tutees on how to successfully debug their programming assignments in \textbf{C, Java and Python}
-				\item Frequently requested for repeated sessions with my tutees and helped them out of scheduled hours
-			\end{itemize}
-		\end{cvsubsection}
+	% \begin{cvsubsection}{Tutor}{Computer Science Undergraduate Society}{Jan 2022 -- Present}
+	% 	\vspace{-2.5mm}
+	% 		Montreal, QC, Canada
+	% 		\begin{itemize}%
+	% 			\item Helped students learn concepts such as algorithms and data structures
+	% 			\item Guided tutees on how to successfully debug their programming assignments in \textbf{C, Java and Python}
+	% 			\item Frequently requested for repeated sessions with my tutees and helped them out of scheduled hours
+	% 		\end{itemize}
+	% 	\end{cvsubsection}
 	\ifx\WEB T{
 		\begin{cvsubsection}{USG of Technology}{MUNNW}{Dec 2017 -- Nov 2019}
 			\vspace{-2.5mm}
@@ -79,9 +89,10 @@
 	\begin{cvsubsection}{}{}{}
 		\begin{itemize}
 			\setlength\itemsep{3pt}
-			\item \textbf{Mixerify} Developed a full stack app to browse a user's Spotify library and pick playlists to send to our ML model. \textit{React.js, Express, Tailwind, Spotify OAuth, REST Api}
-			\item \textbf{Covid Sentiment Analysis}  Scraped geolocated YouTube comments then trained and deployed Tensorflow models to predict comment sentiment on Nvidia Tesla clusters. \textit{Python, Azure}
+			\item \textbf{Happify} Analyzes productivity with two ML models and uses sentiment to queue a Spotify song. Animated frontend that collects playlists to queue from. \textit{Vue.js, Tailwind, Websockets, Flask}
+			% \item \textbf{Covid Sentiment Analysis}  Scraped geolocated YouTube comments then trained and deployed Tensorflow models to predict comment sentiment on Nvidia Tesla clusters. \textit{Python, Azure}
 			\item \textbf{Forest} Interactive multiplayer online game that facilates live competive gameplay between players using a backend based in websockets. \textit{React.js, Tailwind, Typescript, Convex}
+			\item \textbf{Mixerify} Developed a full stack app to browse a user's Spotify library and pick playlists to send to our ML model. \textit{React.js, Express, Tailwind, Spotify OAuth, REST Api}
 			% \ifx\WEB T{
 			% 	\item \textbf{React Wordle} Implementation of Wordle that pulls words from a dictionary then allows the user six tries to guess the word. \textit{React.js, Tailwind}
 			% }\else{
